@@ -1,0 +1,2 @@
+# tallervi
+proyecto taller VI

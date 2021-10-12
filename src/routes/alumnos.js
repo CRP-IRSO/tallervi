@@ -140,22 +140,4 @@ router.put('/alumnos/:id', (req, res) => {
 router.get('*', (req, res) => { errores.error404(req, res) });
 router.use((error, req, res, next) =>{errores.error400(error, req, res, next)});
 
-// //manejar error 404
-// router.get('*', (req, res) => {
-//   res.status(404).json({
-//     status: 'error',
-//     error: '404: File Not Found'
-//   });
-// });
-
-// manejar error 400
-// router.use( function(error, req, res, next) {
-//     res.status(400).json({
-//         status: 'error',
-//         name: error.name,
-//         error: error.message,
-//         path: error.path
-//     });
-// });
-
 module.exports = router;

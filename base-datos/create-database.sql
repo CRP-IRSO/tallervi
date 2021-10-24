@@ -41,7 +41,7 @@ INSERT INTO alumnos (nombres, apellido, direccion, cod_postal, telefono)
 VALUES ('alejandra','perez','castelii 220', '1001', 1544595874);
 
 INSERT INTO alumnos (nombres, apellido, direccion, cod_postal, telefono)
-VALUES ('lucia','ramos','pueyrredon', '1001', 1544595874);1544595874
+VALUES ('lucia','ramos','pueyrredon', '1001', 1544595874);
 
 INSERT INTO alumnos (nombres, apellido, direccion, cod_postal, telefono)
 VALUES ('sofia','delgado','lavalle 2020', '1001', 1548965874);

@@ -1,9 +1,9 @@
 /**
  template para crear tabla e insertar datos en la base de datos mysql
 */
-CREATE DATABASE IF NOT EXISTS irso_2021;
+CREATE DATABASE IF NOT EXISTS irsotaller6;
 
-USE irso_2021;
+USE irsotaller6;
 
 CREATE TABLE alumnos (
 	id INT NOT NULL AUTO_INCREMENT,

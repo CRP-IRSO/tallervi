@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS irsotaller6;
 
 USE irsotaller6;
 
-CREATE TABLE alumnos (
+CREATE TABLE irsotaller6.alumnos (
 	id INT NOT NULL AUTO_INCREMENT,
 	nombres VARCHAR(30),
 	apellido VARCHAR(30),

@@ -1,12 +1,10 @@
 const express = require('express');
+const routerAlumnos = require('./routes/alumnos');+
 const cors = require('cors');
-const routerAlumnos = require('./routes/alumnos');
+app.use(cors());
+
 // const routerErrores = require('./errores/errores');
 const app = express();
-
-app.use(cors({
-  origin: ['https://irso-tallervi.herokuapp.com/alumnos']
-}));
 
 // Settings
 app.set('port', process.env.PORT || 3000);

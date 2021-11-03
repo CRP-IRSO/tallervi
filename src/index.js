@@ -14,7 +14,8 @@ app.use(express.json());
 //app.use(routerErrores);
 
 // Routes
-app.use(routerAlumnos);
+//app.use(routerAlumnos);
+app.use(cors(routerAlumnos));
 
 // Starting the server
 app.listen(app.get('port'), () => {

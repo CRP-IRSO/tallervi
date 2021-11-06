@@ -1,7 +1,7 @@
 const express = require('express');
 const routerAlumnos = require('./routes/alumnos');+
 const cors = require('cors');
-app.use(cors());
+
 
 // const routerErrores = require('./errores/errores');
 const app = express()

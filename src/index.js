@@ -1,8 +1,8 @@
 const express = require('express');
-const cors = require('cors');
 const routerAlumnos = require('./routes/alumnos');
+//const cors = require('cors');
 
-app.use(cors())
+//app.use(cors())
 
 // const routerErrores = require('./errores/errores');
 const app = express();
@@ -12,6 +12,7 @@ app.set('port', process.env.PORT || 3000);
 
 // Middlewares
 app.use(express.json());
+
 //app.use(routerErrores);
 
 // Routes

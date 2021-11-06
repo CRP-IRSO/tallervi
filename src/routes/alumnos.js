@@ -130,7 +130,7 @@ router.put('/alumnos/:id', (req, res) => {
                 +' WHERE id = ?';
     connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono, id], (err, rows, fields) => {
         if(!err) {
-            res.json({status: 'Alumnos Modificado'});
+            res.json({status: 'Alumno Modificado'});
         } else {
             console.log(err);
         }

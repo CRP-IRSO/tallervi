@@ -1,8 +1,6 @@
 const express = require('express');
 const routerAlumnos = require('./routes/alumnos');+
 
-
-
 // const routerErrores = require('./errores/errores');
 const app = express()
 
@@ -14,7 +12,6 @@ app.use(express.json());
 //app.use(routerErrores);
 
 // Routes
-//app.use(routerAlumnos);
 app.use(routerAlumnos);
 
 // Starting the server

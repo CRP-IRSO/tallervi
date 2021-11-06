@@ -2,10 +2,10 @@ const express = require('express');
 const routerAlumnos = require('./routes/alumnos');
 const cors = require('cors');
 
-app.use(cors())
+app.use(cors());
 
 // const routerErrores = require('./errores/errores');
-const app = express()
+const app = express();
 
 // Settings
 app.set('port', process.env.PORT || 3000);

@@ -1,5 +1,5 @@
 const express = require('express');
-const routerAlumnos = require('./routes/alumnos');+
+const routerAlumnos = require('./routes/alumnos');
 
 // const routerErrores = require('./errores/errores');
 const app = express()

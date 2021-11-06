@@ -1,5 +1,6 @@
 const express = require('express');
 const routerAlumnos = require('./routes/alumnos');
+const cors = require('cors');
 
 // const routerErrores = require('./errores/errores');
 const app = express()
@@ -12,7 +13,8 @@ app.use(express.json());
 //app.use(routerErrores);
 
 // Routes
-app.use(routerAlumnos);
+//app.use(routerAlumnos);
+app.use(cors(routerAlumnos));
 
 // Starting the server
 app.listen(app.get('port'), () => {

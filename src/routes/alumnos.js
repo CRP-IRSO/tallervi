@@ -3,18 +3,11 @@ const router = express.Router();
 const connection  = require('../database');
 const validacion = require('../validaciones/validacion');
 const errores = require('../errores/errores');
+const cors = require('cors') //NN
+const app = express() //NN
 var _= require('lodash');
 
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    if ('OPTIONS' == req.method) {
-    res.sendStatus(200);
-    } else {
-      next();
-    }
-  });
+app.use(cors()) //NN
   
 // GET todos los alumnos
 router.get('/alumnos', (req, res) => {

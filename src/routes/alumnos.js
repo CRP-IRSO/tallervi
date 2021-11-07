@@ -8,7 +8,8 @@ const app = express() //NN
 var _= require('lodash');
 
 app.use(cors()) //NN
-  
+app.options('*', cors()); //NN
+
 // GET todos los alumnos
 router.get('/alumnos', (req, res) => {
 

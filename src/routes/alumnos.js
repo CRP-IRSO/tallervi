@@ -5,9 +5,8 @@ const validacion = require('../validaciones/validacion');
 const errores = require('../errores/errores');
 var _= require('lodash');
 
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+import cors from 'cors'; /*NN*/
+server.app.use( cors({ origin: true, credentials: true  }) ); /*NN*/
 
 // GET todos los alumnos
 router.get('/alumnos', (req, res) => {

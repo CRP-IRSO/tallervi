@@ -5,8 +5,9 @@ const validacion = require('../validaciones/validacion');
 const errores = require('../errores/errores');
 var _= require('lodash');
 
-import cors from 'cors'; /*NN*/
-server.app.use( cors({ origin: true, credentials: true  }) ); /*NN*/
+//import cors from 'cors'; /*NN*/
+//server.app.use( cors({ origin: true, credentials: true  }) ); /*NN*/
+
 
 // GET todos los alumnos
 router.get('/alumnos', (req, res) => {

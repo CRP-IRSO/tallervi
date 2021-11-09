@@ -9,7 +9,7 @@ const mysqlConnection = mysql.createConnection({
     //database: 'irso_2021',
     //multipleStatements: true
 
-    //En la web 
+    //En la web
     host: 'www.db4free.net',
     port: '3306',
     user: 'crpirso', //user por defecto

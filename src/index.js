@@ -17,7 +17,7 @@ app.use(express.json());
 //app.use(routerErrores);
 
 // Routes
-app.use(routerAlumnos);
+//app.use(routerAlumnos);
 app.use(routerUsers);
 
 // Starting the server

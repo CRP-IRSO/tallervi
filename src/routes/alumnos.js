@@ -106,7 +106,7 @@ router.post('/alumnos', (req, res) => {
     validacion.validacionDatosPUT(req.body);
     const {nombres, apellido, direccion, cod_postal, telefono} = req.body;
     
-    var nombres = req.body.nombres;
+   // var nombres = req.body.nombres;
     var apellido = req.body.apellido;
     var direccion = req.body.direccion;
     var cod_postal = req.body.cod_postal;
@@ -119,7 +119,7 @@ router.post('/alumnos', (req, res) => {
         } else {
             console.log(err);
         }
-    });
+    });//
 });
 
 // Modificar Alumno

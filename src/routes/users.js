@@ -83,13 +83,13 @@ router.get('/users/:id', (req, res) => {
 router.post('/users', (req, res) => {
 
   //validacion.validacionDatosPOST(req.body);
-  
+
   const user = req.body.user;
   const name = req.body.user;
   const pass = req.body.pass;
-  var sql = 'INSERT INTO users (nombres, apellido, direccion, cod_postal, telefono) '+
-              'VALUES ( ?, ?, ?, ?, ? )';
-  connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono], (err, rows, fields) => {
+  var sql = 'INSERT INTO users (user, name, pass) '+
+              'VALUES ( ?, ?, ? )';
+  connection.query(sql, [user , name, pass], (err, rows, fields) => {
       if(!err) {
           res.status(201);
           res.json({status: "Usuario Registrado"});
@@ -107,9 +107,9 @@ router.put('/users/:id', (req, res) => {
       const user = req.body.user;
       const name = req.body.user;
       const pass = req.body.pass;
-      var sql = 'UPDATE users SET nombres = ?, apellido = ?, direccion = ?, cod_postal = ?, telefono = ?'
+      var sql = 'UPDATE users SET user = ?, name = ?, pass = ?'
                   +' WHERE id = ?';
-      connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono, id], (err, rows, fields) => {
+      connection.query(sql, [user, name, pass, id], (err, rows, fields) => {
           if(!err) {
               res.json({status: "Usuario Modificado"});
           } else {
@@ -117,5 +117,5 @@ router.put('/users/:id', (req, res) => {
           }
       });
   });
-    
+
     module.exports = router;

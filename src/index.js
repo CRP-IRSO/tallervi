@@ -1,6 +1,6 @@
 const express = require('express');
 const routerAlumnos = require('./routes/alumnos');
-//const routerUsers = require('./routes/users');
+const routerUsers = require('./routes/users');
 const cors = require('cors');
 
 // const routerErrores = require('./errores/errores');
@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Routes
 app.use(routerAlumnos);
-app.use('/users', require('./routes/users'));
+app.use(routerUsers);
 
 // Starting the server
 app.listen(app.get('port'), () => {

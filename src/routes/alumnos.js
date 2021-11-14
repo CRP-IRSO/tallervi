@@ -115,7 +115,8 @@ router.post('/alumnos', (req, res) => {
                 'VALUES ( ?, ?, ?, ?, ? )';
     connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono], (err, rows, fields) => {
         if(!err) {
-            res.json({id,nombres});
+            res.status(201);
+            res.json({status: "Alumno Insertado"});
         } else {
             console.log(err);
         }
@@ -137,7 +138,7 @@ router.put('/alumnos/:id', (req, res) => {
                 +' WHERE id = ?';
     connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono, id], (err, rows, fields) => {
         if(!err) {
-            res.json({id,nombres,apellido});
+            res.json({status: "Alumno Modificado"});
         } else {
             console.log(err);
         }

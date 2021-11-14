@@ -115,7 +115,7 @@ router.post('/alumnos', (req, res) => {
                 'VALUES ( ?, ?, ?, ?, ? )';
     connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono], (err, rows, fields) => {
         if(!err) {
-            res.json({id,nombres,apellido});
+            res.json({id,nombres});
         } else {
             console.log(err);
         }

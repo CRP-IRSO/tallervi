@@ -103,7 +103,7 @@ router.delete('/alumnos/:id', (req, res) => {
 // Insertar Alumno
 router.post('/alumnos', (req, res) => {
     
-    validacion.validacionDatosPOST(req.body);
+    //validacion.validacionDatosPOST(req.body);
     //const {nombres, apellido, direccion, cod_postal, telefono} = req.body;
     
     var nombres = req.body.nombres;

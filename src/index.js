@@ -1,6 +1,6 @@
 const express = require('express');
 const routerAlumnos = require('./routes/alumnos');
-const routerUsers = require('./routes/users');
+//const routerUsers = require('./routes/users');
 const cors = require('cors');
 
 // const routerErrores = require('./errores/errores');

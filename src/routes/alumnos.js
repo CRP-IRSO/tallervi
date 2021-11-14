@@ -94,6 +94,7 @@ router.delete('/alumnos/:id', (req, res) => {
         console.log(rows.affectedRows)
         if(!err) {
             res.status(204);
+            res.json({status: 'Alumno Eliminado'});
         } else {
             console.log(err)
         }

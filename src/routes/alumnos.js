@@ -93,7 +93,7 @@ router.delete('/alumnos/:id', (req, res) => {
         console.log("el affectedRows es:");
         console.log(rows.affectedRows)
         if(!err) {
-            res.json(statusCode:204);
+            res.status(204);
         } else {
             console.log(err)
         }

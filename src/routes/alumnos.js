@@ -124,6 +124,9 @@ router.post('/alumnos', (req, res) => {
 
 // Modificar Alumno
 router.put('/alumnos/:id', (req, res) => {
+    
+    validacion.validacionDatosPUT(req.body);
+    
     const { id } = req.params;
     var nombres = req.body.nombres;
     var apellido = req.body.apellido;

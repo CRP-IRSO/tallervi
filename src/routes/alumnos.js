@@ -85,6 +85,9 @@ router.get('/alumnos/:id', (req, res) => {
 // DELETE Alumnos por id
 router.delete('/alumnos/:id', (req, res) => {
 
+    var nombres = nombretemp;
+    integer {id} = idtemp;
+    
     validacion.validacionDataIds(req.params);
     const { id } = req.params;
     var sql = 'DELETE FROM alumnos WHERE id = ?';

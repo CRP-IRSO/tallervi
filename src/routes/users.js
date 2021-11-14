@@ -117,3 +117,5 @@ router.put('/users/:id', (req, res) => {
           }
       });
   });
+    
+    module.exports = router;

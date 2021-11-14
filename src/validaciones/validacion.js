@@ -24,7 +24,7 @@ module.exports = {
             nombres: yup.string(true).min(5).nullable(true).typeError('nombres must be a string').required('nombres is required'),
             apellido: yup.string().min(5).nullable(true).typeError('apellido must be a string').required('apellido is required'),
             direccion: yup.string().min(5).nullable(true).typeError('direccion must be a strig').required('direccion is required'),
-            cod_postal: yup.string().min(4).nullable(true).typeError('cod_postal must be a string').required('cod_postal is required'),
+            cod_postal: yup.number().min(4).nullable(true).typeError('cod_postal must be a string').required('cod_postal is required'),
             telefono: yup.number().min(2).integer().nullable(true).typeError('telefono must be a number').required('telefono is required'), 
         });
         schema.validateSync(data);

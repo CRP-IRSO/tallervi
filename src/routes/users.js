@@ -1,21 +1,43 @@
-import {UserController} from './ ../controller/UserController';
-import {Router} from 'express'
+const express = require('express');
+const router = express.Router();
+const connection  = require('../database');
+const validacion = require('../validaciones/validacion');
+const errores = require('../errores/errores');
+var _= require('lodash');
 
-const router = Router();
+router.post('/users', (req, res) => {
 
-// Get todos los users
-router.get('/', UserController.getAll);
+  //validacion.validacionDatosPOST(req.body);
+  
+  const user = req.body.user;
+  const name = req.body.user;
+  const pass = req.body.pass;
+  var sql = 'INSERT INTO users (nombres, apellido, direccion, cod_postal, telefono) '+
+              'VALUES ( ?, ?, ?, ?, ? )';
+  connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono], (err, rows, fields) => {
+      if(!err) {
+          res.status(201);
+          res.json({status: "Usuario Registrado"});
+      } else {
+          console.log(err);
+      }
+  });
 
-//Get un solo user
-router.get('/:id', UserController.getById);
+router.put('/users/:id', (req, res) => {
 
-//Create un nuevo usuario
-router.post('/', UserController.newUser);
+      //validacion.validacionDatosPUT(req.body);
 
-//Editar user
-router.patch('/:id', UserController.editUser);
-
-//Delete
-router.delete('/:id', UserController.deleteUSer);
-
-export default router;
+      const { id } = req.params;
+      const user = req.body.user;
+      const name = req.body.user;
+      const pass = req.body.pass;
+      var sql = 'UPDATE users SET nombres = ?, apellido = ?, direccion = ?, cod_postal = ?, telefono = ?'
+                  +' WHERE id = ?';
+      connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono, id], (err, rows, fields) => {
+          if(!err) {
+              res.json({status: "Usuario Modificado"});
+          } else {
+              console.log(err);
+          }
+      });
+  });

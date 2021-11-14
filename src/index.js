@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Routes
 app.use(routerAlumnos);
-//app.use('/', require('./routes/users'));
+app.use('/users', require('./routes/users'));
 
 // Starting the server
 app.listen(app.get('port'), () => {

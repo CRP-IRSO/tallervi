@@ -62,6 +62,23 @@ router.get('/users', (req, res) => {
     }
 });
 
+// GET Users por id
+router.get('/users/:id', (req, res) => {
+    console.log(req);
+    //validacion.validacionDataIds(req.params);
+
+    const { id } = req.params;
+    var sql = 'SELECT * FROM users WHERE id = ?';
+
+    connection.query(sql, [id], (err, rows, fields) => {
+        if (!err && rows.length !== 0) {
+            res.json(rows[0]);
+        } else {
+            errores.error404(req, res);
+        }
+    });
+});
+
 // Insertar User
 router.post('/users', (req, res) => {
 

@@ -82,7 +82,7 @@ var _= require('lodash');
 // Autenticación
 router.post('/auth',(req, res) =>{
   const user = req.body.user;
-  const pass = req.body.user;
+  const pass = req.body.pass;
   if(user && pass){
     connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
       if(results.length == 0){

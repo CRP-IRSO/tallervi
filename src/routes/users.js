@@ -6,7 +6,7 @@ const errores = require('../errores/errores');
 var _= require('lodash');
 
 // GET todos los users
-router.get('/users', (req, res) => {
+/*router.get('/users', (req, res) => {
 
     console.log(req);
     var sizeQuery = _.size(req.query)
@@ -60,10 +60,10 @@ router.get('/users', (req, res) => {
             }
         });
     }
-});
+});*/
 
 // GET Users por id
-router.get('/users/:id', (req, res) => {
+/*router.get('/users/:id', (req, res) => {
     console.log(req);
     //validacion.validacionDataIds(req.params);
 
@@ -77,6 +77,21 @@ router.get('/users/:id', (req, res) => {
             errores.error404(req, res);
         }
     });
+});*/
+
+// Autenticación
+app.post('/users',(req, res) =>{
+  const user = req.body.user;
+  const pass = req.body.user;
+  if(user && pass){
+    connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
+      if(results.length == 0){
+        res.send('Usuario o password incorrectos');
+      } else {
+        res.send('Login correcto');
+      }
+    })
+  }
 });
 
 // Insertar User

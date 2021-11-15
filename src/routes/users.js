@@ -63,7 +63,7 @@ router.get('/users', (req, res) => {
 });
 
 // GET Users por id
-router.get('/users/:id', (req, res) => {
+/*router.get('/users/:id', (req, res) => {
     console.log(req);
     //validacion.validacionDataIds(req.params);
 
@@ -117,7 +117,7 @@ router.put('/users/:id', (req, res) => {
               console.log(err);
           }
       });
-  });
+  });*/
 
   router.get('*', (req, res) => { errores.error404(req, res) });
   router.use((error, req, res, next) =>{errores.error400(error, req, res, next)});

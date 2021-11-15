@@ -106,7 +106,7 @@ router.put('/users/:id', (req, res) => {
 
       const { id } = req.params;
       const user = req.body.user;
-      const name = req.body.user;
+      const name = req.body.name;
       const pass = req.body.pass;
       var sql = 'UPDATE users SET user = ?, name = ?, pass = ?'
                   +' WHERE id = ?';
@@ -119,4 +119,7 @@ router.put('/users/:id', (req, res) => {
       });
   });
 
-    module.exports = router;
+  router.get('*', (req, res) => { errores.error404(req, res) });
+  router.use((error, req, res, next) =>{errores.error400(error, req, res, next)});
+
+module.exports = router;

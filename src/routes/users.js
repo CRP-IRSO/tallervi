@@ -6,7 +6,7 @@ const errores = require('../errores/errores');
 var _= require('lodash');
 
 // GET todos los users
-/*router.get('/users', (req, res) => {
+router.get('/users', (req, res) => {
 
     console.log(req);
     var sizeQuery = _.size(req.query)
@@ -77,7 +77,7 @@ router.get('/users/:id', (req, res) => {
             errores.error404(req, res);
         }
     });
-});*/
+});
 
 // Insertar User
 router.post('/users', (req, res) => {
@@ -100,7 +100,7 @@ router.post('/users', (req, res) => {
 });
 
 // Modificar User
-/*router.put('/users/:id', (req, res) => {
+router.put('/users/:id', (req, res) => {
 
       //validacion.validacionDatosPUT(req.body);
 
@@ -117,7 +117,7 @@ router.post('/users', (req, res) => {
               console.log(err);
           }
       });
-  });*/
+  });
 
   router.get('*', (req, res) => { errores.error404(req, res) });
   router.use((error, req, res, next) =>{errores.error400(error, req, res, next)});

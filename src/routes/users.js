@@ -97,7 +97,7 @@ router.post('/users', (req, res) => {
           console.log(err);
       }
   });
-}
+});
 
 // Modificar User
 /*router.put('/users/:id', (req, res) => {

@@ -85,7 +85,7 @@ router.post('/users', (req, res) => {
   //validacion.validacionDatosPOST(req.body);
 
   const user = req.body.user;
-  const name = req.body.user;
+  const name = req.body.name;
   const pass = req.body.pass;
   var sql = 'INSERT INTO users (user, name, pass) '+
               'VALUES ( ?, ?, ? )';

@@ -80,7 +80,7 @@ var _= require('lodash');
 });*/
 
 // Autenticación
-router.post('/auth',(req, res) =>{
+/*router.post('/auth',(req, res) =>{
   const user = req.body.user;
   const pass = req.body.pass;
   if(user && pass){
@@ -92,7 +92,7 @@ router.post('/auth',(req, res) =>{
       }
     })
   }
-});
+});*/
 
 // Insertar User
 router.post('/users', (req, res) => {

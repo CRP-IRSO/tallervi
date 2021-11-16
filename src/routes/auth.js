@@ -16,7 +16,7 @@ router.post('/auth',(req, res) =>{
       if(results.length === 0){
         res.send('Usuario o password incorrectos');
       } else {
-        res.send('Login correcto');
+        res.send('Login correcto:');
       }
     })
   }

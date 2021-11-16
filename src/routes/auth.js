@@ -10,18 +10,25 @@ router.post('/auth', (req, res) => {
 
   const user = req.body.user;
   const pass = req.body.pass;
-  var sql = connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
-    if(!err) {
+  var sql = 'SELLECT * FROM users WHERE user = ?';
+
+   connection.query(sql, [user], (err, rows, fields) => {
+    if(!err && rows.length !== 0) {
+        res.json({status: 'Usuario o password incorrectos'});
+      } else {
+        res.json({status: 'Login correcto'});
+      }
+      });
 
   /*if(user && pass){
-    connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {*/
+    connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
       if(results.length === 0){
         res.json({status: 'Usuario o password incorrectos'});
       } else {
         res.json({status: 'Login correcto'});
       }
-    }
-    });
+    }*/
+
 });
 
 //router.get('*', (req, res) => { errores.error404(req, res) });

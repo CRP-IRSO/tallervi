@@ -16,7 +16,7 @@ router.post('/auth', (req, res) => {
       if(results.length === 0){
         res.json({status: 'Usuario o password incorrectos'});
       } else {
-        res.json({status: 'Login correctoo'});
+        res.json({status: 'Login correcto'});
       }
     });
   }

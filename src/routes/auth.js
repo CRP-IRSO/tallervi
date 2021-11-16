@@ -6,12 +6,12 @@ const errores = require('../errores/errores');
 var _= require('lodash');
 
 // Autenticación
-router.get('/auth',(req, res) => {
+router.post('/auth', (req, res) => {
 
   const user = req.body.user;
   const pass = req.body.pass;
 
-  if(user && pass){
+  if(user){
     connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
       if(results.length !== 0){
         res.json({status: 'Usuario o password incorrectos'});

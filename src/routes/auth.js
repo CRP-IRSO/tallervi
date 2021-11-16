@@ -10,6 +10,7 @@ router.post('/auth', (req, res) => {
 
   var user = req.body.user;
   var pass = req.body.pass;
+  var sql =
 
   if(user && pass){
     connection.query('SELLECT * FROM users WHERE user = ?', [user], (err, rows, fields) => {
@@ -18,7 +19,7 @@ router.post('/auth', (req, res) => {
       } else {
         res.json({status: 'Login correctoo'});
       }
-    })
+    });
   }
 });
 

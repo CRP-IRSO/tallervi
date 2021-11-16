@@ -13,7 +13,7 @@ router.post('/auth', (req, res) => {
   var sql = 'SELLECT * FROM users WHERE user = ?';
 
    connection.query(sql, [user], (err, rows, fields) => {
-    if(results.length !== 0) {
+    if(!err && rows.length !== 0) {
         res.json({status: 'Usuario o password incorrectos'});
       } else {
         res.json({status: 'Login correcto'});

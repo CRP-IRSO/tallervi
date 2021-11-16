@@ -14,9 +14,9 @@ router.post('/auth', (req, res) => {
 
    connection.query(sql, [user], (err, rows, fields) => {
     if(!err && rows.length !== 0) {
-        res.json({status: 'Usuario o password incorrectos'});
-      } else {
         res.json({status: 'Login correcto'});
+      } else {
+        res.sender({status: 'Usuario o password incorrectos'});
       }
       });
 

@@ -84,7 +84,7 @@ router.get('/alumnos/:id', (req, res) => {
 
 // DELETE Alumnos por id
 router.delete('/alumnos/:id', (req, res) => {
-    
+
     validacion.validacionDataIds(req.params);
     const { id } = req.params;
     var sql = 'DELETE FROM alumnos WHERE id = ?';
@@ -103,10 +103,10 @@ router.delete('/alumnos/:id', (req, res) => {
 
 // Insertar Alumno
 router.post('/alumnos', (req, res) => {
-    
+
     //validacion.validacionDatosPOST(req.body);
     //const {nombres, apellido, direccion, cod_postal, telefono} = req.body;
-    
+
     var nombres = req.body.nombres;
     var apellido = req.body.apellido;
     var direccion = req.body.direccion;
@@ -126,9 +126,9 @@ router.post('/alumnos', (req, res) => {
 
 // Modificar Alumno
 router.put('/alumnos/:id', (req, res) => {
-    
+
     validacion.validacionDatosPUT(req.body);
-    
+
     const { id } = req.params;
     var nombres = req.body.nombres;
     var apellido = req.body.apellido;
@@ -139,7 +139,7 @@ router.put('/alumnos/:id', (req, res) => {
                 +' WHERE id = ?';
     connection.query(sql, [nombres , apellido, direccion, cod_postal, telefono, id], (err, rows, fields) => {
         if(!err) {
-            res.json({status: "Alumno Modificado"});
+            res.json({id});
         } else {
             console.log(err);
         }

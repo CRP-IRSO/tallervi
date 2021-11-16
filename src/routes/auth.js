@@ -22,7 +22,7 @@ var _= require('lodash');
   }
 });*/
 
-router.get('*', (req, res) => { errores.error404(req, res) });
+//router.get('*', (req, res) => { errores.error404(req, res) });
 router.use((error, req, res, next) =>{errores.error400(error, req, res, next)});
 
 module.exports = router;

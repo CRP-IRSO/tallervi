@@ -6,9 +6,9 @@ const errores = require('../errores/errores');
 var _= require('lodash');
 
 // Autenticación
-/*router.post('/auth',(req, res) =>{
+/*router.post('/auth',(req, res) =>{*/
 
-  const user = req.body.user;
+  /*const user = req.body.user;
   const pass = req.body.pass;
 
   if(user && pass){

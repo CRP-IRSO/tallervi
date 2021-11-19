@@ -23,11 +23,15 @@ router.get('/users', (req, res) => {
 
     if (sizeQuery === 0) {
         var sql = 'SELECT * FROM users';
-        connection.query(sql, (err, rows, fields) => {
+        console.log("tercero: " + queryUrl)
+        var query = connection.query(sql, (err, rows) => {
             if(!err) {
                 res.json({ users: rows });
+                ////connection.end();
+
             } else {
-                console.log(err);
+                throw err;
+                //console.log(err);
             }
         });
 
@@ -36,8 +40,10 @@ router.get('/users', (req, res) => {
         console.log("la query es: " + sql)
         connection.query(sql, (err, rows, fields) => {
             if(!err) {
+                //connection.end();
                 res.json({ users: rows });
             } else {
+                //connection.end();
                 console.log(err);
             }
         });
@@ -49,14 +55,16 @@ router.get('/users', (req, res) => {
         connection.query(sql, (err, results, fields) => {
 
             if(!err) {
+                //connection.end();
                 res.json({ users: results });
             } else {
                 console.log("error");
-                console.log(err.sqlMessage)
-                console.log(err.sqlState)
-                console.log("code")
-                console.log(err.code)
-                errores.error400(err, req, res)
+                console.log(err.sqlMessage);
+                console.log(err.sqlState);
+                console.log("code");
+                console.log(err.code);
+                errores.error400(err, req, res);
+                //connection.end();
             }
         });
     }
@@ -87,16 +95,29 @@ router.post('/users', (req, res) => {
   const user = req.body.user;
   const name = req.body.name;
   const pass = req.body.pass;
-  var sql = 'INSERT INTO users (user, name, pass) '+
+
+
+  var sql = 'SELECT * FROM users WHERE user = ?';
+
+  connection.query(sql, [user], (err, rows, fields) => {
+      if (!err && rows.length !== 0) {
+            res.json({status: "El usuario ya existe"});
+        } else {
+            var sql = 'INSERT INTO users (user, name, pass) '+
               'VALUES ( ?, ?, ? )';
-  connection.query(sql, [user , name, pass], (err, rows, fields) => {
-      if(!err) {
-          res.status(201);
-          res.json({status: "Usuario Registrado"});
-      } else {
-          console.log(err);
+            connection.query(sql, [user , name, pass], (err, rows, fields) => {
+                if(!err) {
+                    res.status(201);
+                    res.json({status: "Usuario Registrado"});
+                } else {
+                    console.log(err);
+                }
+            });
+          //errores.error404(req, res);
       }
   });
+
+
 });
 
 // Modificar User

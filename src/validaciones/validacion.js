@@ -45,16 +45,14 @@ module.exports = {
         schema.validateSync(data);
     }
 
-      validacionDat: (data) => {
+      /*validacionUserPOST: (data) => {
       const schema = yup.object().shape({
       id: yup.number().min(1).integer().nullable(true).typeError('id must be a number').positive('id must be greater than zero'),
       user: yup.string().min(3).nullable(true).matches(/^[aA-zZ\s]+$/, "solo se permiten letras ").typeError('nombres must be a string').required('nombres is required'),
-      name: yup.string().min(3).nullable(true).matches(/^[aA-zZ\s]+$/, "solo se permiten letras ").typeError('apellido must be a string').required('apellido is required'),
-      pass: yup.string().min(8).nullable(true).required('password is required'),
+      password: yup.string().min(8).nullable(true).required('password is required'),
 
     });
-
     schema.validateSync(data);
-  }
+  }*/
 
 }

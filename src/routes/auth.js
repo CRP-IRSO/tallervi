@@ -8,7 +8,7 @@ var _= require('lodash');
 // Autenticación
 router.post('/auth', (req, res) => {
 
-validacion.validacionUserPOST(req.body);
+//validacion.validacionUserPOST(req.params);
 
   const user = req.body.user;
   const pass = req.body.password;

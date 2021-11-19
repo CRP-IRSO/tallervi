@@ -9,14 +9,15 @@ var _= require('lodash');
 router.post('/auth', (req, res) => {
 
   const user = req.body.user;
-  const pass = req.body.pass;
-  var sql = 'SELLECT * FROM users WHERE user = ?';
-
-   connection.query(sql, [user], (err, rows, fields) => {
+  const pass = req.body.password;
+  var sql = 'SELECT * FROM users WHERE user = ? AND pass = ?';
+console.log(pass);
+   connection.query(sql, [user, pass], (err, rows, fields) => {
     if(!err && rows.length !== 0) {
         res.json({status: 'Login correcto'});
       } else {
-        res.sender({status: 'Usuario o password incorrectos'});
+        console.log(err)
+        res.json({status: 'Usuario o password incorrectos'});
       }
       });
 

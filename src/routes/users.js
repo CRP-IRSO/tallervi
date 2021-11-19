@@ -26,8 +26,8 @@ router.get('/users', (req, res) => {
         console.log("tercero: " + queryUrl)
         var query = connection.query(sql, (err, rows) => {
             if(!err) {
-                res.json( [user] );
-                //res.json({ users: rows });
+                //res.json( [user] );
+                res.json({ users: rows });
                 ////connection.end();
 
             } else {

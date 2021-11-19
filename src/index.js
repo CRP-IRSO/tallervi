@@ -20,7 +20,7 @@ app.use(express.json());
 // Routes
 app.use(routerAlumnos);
 app.use(routerUsers);
-app.use(routerAuth);
+app.use(routerAuth);:
 
 // Starting the server
 app.listen(app.get('port'), () => {

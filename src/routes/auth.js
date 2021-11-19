@@ -8,6 +8,8 @@ var _= require('lodash');
 // Autenticación
 router.post('/auth', (req, res) => {
 
+validacion.validacionUserPOST(req.body);
+
   const user = req.body.user;
   const pass = req.body.password;
   var sql = 'SELECT * FROM users WHERE user = ? AND pass = ?';
